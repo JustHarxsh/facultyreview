@@ -5,34 +5,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="assets/img/illustrations/FacultyReviewpng.png">
-    <title>Contacts - Brand</title>
+    <title>Contact - FacultyReview</title>
+    
     <script>
         (function() {
-
             // JavaScript snippet handling Dark/Light mode switching
-
             const getStoredTheme = () => localStorage.getItem('theme');
             const setStoredTheme = theme => localStorage.setItem('theme', theme);
             const forcedTheme = document.documentElement.getAttribute('data-bss-forced-theme');
-
             const getPreferredTheme = () => {
-
                 if (forcedTheme) return forcedTheme;
-
                 const storedTheme = getStoredTheme();
                 if (storedTheme) {
                     return storedTheme;
                 }
-
                 const pageTheme = document.documentElement.getAttribute('data-bs-theme');
-
                 if (pageTheme) {
                     return pageTheme;
                 }
-
                 return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
-
             const setTheme = theme => {
                 if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     document.documentElement.setAttribute('data-bs-theme', 'dark');
@@ -40,40 +32,30 @@
                     document.documentElement.setAttribute('data-bs-theme', theme);
                 }
             }
-
             setTheme(getPreferredTheme());
-
             const showActiveTheme = (theme, focus = false) => {
                 const themeSwitchers = [].slice.call(document.querySelectorAll('.theme-switcher'));
-
                 if (!themeSwitchers.length) return;
-
                 for (const themeSwitcher of themeSwitchers) {
-
                     const themeSwitcherText = document.querySelector('#theme-text');
                     const activeThemeIcon = document.querySelector('.theme-icon-active use');
                     const btnToActive = document.querySelector('[data-bs-theme-value="' + theme + '"]');
-
                     document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
                         element.classList.remove('active');
                         element.setAttribute('aria-pressed', 'false');
                     });
-
                     btnToActive.classList.add('active');
                     btnToActive.setAttribute('aria-pressed', 'true');
                 }
             }
-
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
                 const storedTheme = getStoredTheme();
                 if (storedTheme !== 'light' && storedTheme !== 'dark') {
                     setTheme(getPreferredTheme());
                 }
             });
-
             window.addEventListener('DOMContentLoaded', () => {
                 showActiveTheme(getPreferredTheme());
-
                 document.querySelectorAll('[data-bs-theme-value]')
                     .forEach(toggle => {
                         toggle.addEventListener('click', () => {
@@ -159,7 +141,7 @@
                             <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="false" aria-controls="accordion-1 .item-1">Who we are?</button></h2>
                             <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordion-1">
                                 <div class="accordion-body">
-                                    <p>We are too students, working in&nbsp;</p>
+                                    <p>We are too students, working in the welfare of students and helping students to choose faculties and study well</p>
                                 </div>
                             </div>
                         </div>
@@ -214,5 +196,4 @@
     <script src="assets/js/smart-forms.min.js"></script>
     <script src="assets/js/startup-modern.js"></script>
 </body>
-
 </html>

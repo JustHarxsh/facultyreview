@@ -1,6 +1,6 @@
 # Faculty Review App
 
-The Faculty Review App is a web-based application that allows users to manage faculty information. Users can view existing faculty, modify their details, and create new faculty entries for there college
+The Faculty Review App is a web-based application that allows users to manage faculty information. Users can view existing faculty, modify their details, and create new faculty entries for their college.
 
 ## Features
 
@@ -11,8 +11,8 @@ The Faculty Review App is a web-based application that allows users to manage fa
 ## Technologies to be Used
 
 - Front-end: HTML, CSS, JavaScript
-- Back-end: Python, Flask framework
-- Database: SQLite
+- Back-end: Python, Node.js
+- Database: MongoDB
 
 ## Contributing
 
